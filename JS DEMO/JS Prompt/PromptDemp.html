@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> The prompt method in javaScript</h1>
+    </header>
+    
+    <main>
+        <form action="">
+            <input type="button" value="NAME?" onclick="getName()">
+            <br>
+           <input type="button" value="SECTION?" onclick="getSection()">
+        </form>
+    </main>
+    <script>
+        let name;
+        let section;
+
+        //create a function
+        function getName(){
+            name = window.prompt("Enter your name!");
+            alert("Hello " + name + " Welcome here!");
+        }
+        function getSection(){
+            section = window.prompt("Enter your Section");
+            alert(section);
+        }
+
+    </script>
+</body>
+</html>
