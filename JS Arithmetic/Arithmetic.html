@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>JavaScript Operators and Number emailValidation</h1>
+    </header>
+    <main>
+        <form>
+            <label for="fNum">First Number</label>
+            <input type="text" name="fNum" id="fNum" size="30">
+
+            <label for="sNum">Second Number</label>
+            <input type="text" name="sNum" id="sNum" size="30">
+
+            <label for="output">The value</label>
+            <input type="text" name="output" id="output" size=30 disabled="disabled">
+
+            <input type="button" value="Submit" id="btnCompute">
+        </form>
+    </main>
+    <footer>
+        &copy; 2023
+    </footer>
+     
+    <script>
+
+        let firstValue, SecondValue;
+        let compute=0;
+
+        function computeValue(){
+            firstValue = parseInt(document.getElementById("fNum").value);
+            SecondValue = parseInt(document.getElementById("sNum").value);
+        
+            compute = firstValue + firstValue;
+            document.getElementById("output").value = compute;
+        //alert("The value of the first textbox is :"+ firstValue + SecondValue);            
+        }
+        document.getElementById("btnCompute").addEventListener("click",computeValue)
+
+
+    </script>
+</body>
+</html>
