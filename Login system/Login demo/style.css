@@ -1,0 +1,20 @@
+
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header{
+  font-family: Arial, sans-serif;
+  background-color: #d6d6d6;
+  padding: 1px;
+}
+header h1{
+  margin: 20px;
+}
+form table{
+  margin: 20px;
+  padding: 5px;
+}
+
+
