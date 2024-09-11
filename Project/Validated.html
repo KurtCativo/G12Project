@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Enter you Username </h2>
+    <form>
+        <input type="text" id="user" name="user" required placeholder="Username">
+        <button type="button" onclick="validateUserName()">Continue</button>
+    </form>
+    <p id="message"></p>
+    <script>
+        function validateUserName(){
+            let user = document.getElementById('user').value;
+            let regUser = /^[a-zA-Z]{5,20}$/;
+
+            if(regUser.test(user)){
+                document.getElementById("message").innerHTML = " ";
+            }else{
+                document.getElementById("message").innerHTML = "Incorrect Format";
+            }
+        }
+    </script>
+</body>
+</html>
