@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        let text = "the quick brown fox slightly jumps over the head of the lazy dog."
+        let regEx = new RegExp("fox");
+        console.log(regEx);
+        let regEx2 = /dog/;
+        let regEx3 = /\s/;
+        console.log(regEx3);
+
+        console.log(regEx.test(text));
+        console.log(regEx2.test(text));
+        console.log(regEx2.exec(text));
+
+        console.log(text.match(regEx2));
+        console.log(text.search(regEx2));
+        console.log(text.replace(regEx2, 'tiger'));
+        console.log(text.split(regEx3));
+
+    </script>
+</body>
+</html>

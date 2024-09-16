@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2> Enter you Username </h2>
+    <form>
+        <input type="text" id="user" name="user" required placeholder="Username">
+        <br><br>
+        <input type="email" id="email" name="email" required placeholder="Email">
+        <button type="button" onclick="validateUser(), validateEmail()">Continue</button>
+    </form>
+    <p id="message1"></p>
+    <p id="message2"></p>
+    <script>
+        function validateUser(){
+            //Value-
+            let user = document.getElementById('user').value;
+
+            //RegExpression-
+            let regUser = /^[a-zA-Z]{5,20}$/;
+
+            //check if the RegExpressions
+            if(regUser.test(user)){
+                document.getElementById("message1").innerHTML = "Valid Username";
+            }else{
+                document.getElementById("message1").innerHTML = "Incorrect Format: Username must be 5-20 letter";
+            }
+        }
+
+        function validateEmail(){
+            //Value-
+            let email = document.getElementById('email').value;
+
+            //RegExpression-
+            let regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
+
+            //check if the RegExpressions
+            if(regEmail.test(email)){
+                document.getElementById("message2").innerHTML = "Valid Email"
+            }else{
+                document.getElementById("message2").innerHTML = "incorrect Format: Please enter a valid email address."
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+

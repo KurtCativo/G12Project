@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        body{
+            margin: 15px;
+            padding: 20px;
+        }
+        form{
+            padding: 20px;
+            border: 3px solid ;
+            
+        }
+        label{
+            padding: 9px;
+        }
+
+        input{
+            padding: 7px;
+            width: 200px;
+            border-radius: 7px;
+        }
+        .buttonFormat{
+            background-color: lightblue;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <form>
+        <h2> Validation </h2>
+        <label>Username:</label>
+        <input type="text" id="user" name="user" placeholder="Enter your Username" required>
+        <br><br>
+        <label>Password: </label>
+        <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+        <br><br>
+        <button type="button" class="buttonFormat"  onclick="ValidationUserName(), ValidationPassWord()">Enter</button>
+        <button type="button" class="buttonFormat" onclick="clearFields()">Clear</button>
+        
+        <p id="message1"></p>
+        <p id="message2"></p>
+    </form>
+    
+
+    <script>
+        function ValidationUserName(){
+            let user = document.getElementById('user').value;
+
+            let regUser = /^[a-zA-Z]{5,20}$/;
+
+            if(regUser.test(user)){
+                document.getElementById("message1").innerHTML = "Valid Username"
+            }else{
+                document.getElementById("message1").innerHTML = "Incorrect Username: Username should be 5-20 characters."
+            }
+        }
+        
+        function ValidationPassWord(){
+            let pass = document.getElementById('password').value;
+
+            let regPass = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/;
+
+            if(regPass.test(pass)){
+                document.getElementById("message2").innerHTML = "Valid Password"
+            }else{
+                document.getElementById("message2").innerHTML = "Incorrect Password: Password must be at least 8 characters."
+            }
+        }
+        function clearFields(){
+            document.getElementById('user').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
