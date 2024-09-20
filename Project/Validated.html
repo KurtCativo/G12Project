@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+    <style>
+        body{
+            margin: 15px;
+            padding: 20px;
+            background: linear-gradient(90deg, rgba(237, 237, 241, 0.708),rgba(129, 216, 221, 0.708), rgba(27, 200, 192, 0.708));
+            
+        }
+        form{
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            margin-right: 850px;
+        }
+        label{
+            padding: 15px;
+        }
+        input{
+            padding: 15px;
+            width: 210px;
+            border-radius: 7px;
+        }
+        .buttonFormat{
+            background-color: lightblue;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .p{
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--Form Field-->
+    <div class="container">
+        <form>
+            <!--Header-->
+            <h2> Login Validation </h2>
+
+            <!--Username-->
+            <label>Username:</label>
+            <input type="text" id="user" name="user" required placeholder="Enter your Username" autofocus>
+            <p id="message1"></p>
+            <br><br>
+
+            <!--Password-->
+            <label>Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your Password" autofocus>
+            <p id="message2"></p>
+            <br><br>
+
+            <!--Button-->
+            <button type="button" class="buttonFormat" onclick="validateUser(), validatePass()">Login</button>
+            <button type="button" class="buttonFormat" onclick="clearField()">Clear</button>
+        </form>
+    </div>
+    
+    <!-- Script in Form -->
+    <script>
+        //Validation of Username
+        function validateUser(){
+            //Value-
+            let user = document.getElementById('user').value;
+
+            //RegExpression-
+            let regUser = /^[a-zA-Z]{5,20}$/;
+
+            //check if the RegExpressions it's work
+            if(regUser.test(user)){
+                document.getElementById("message1").innerHTML = "Valid Username";
+            }else{
+                document.getElementById("message1").innerHTML = "Invalid Format: Username should be 5-20 characters.";
+            }
+        }
+
+        //Validation of Password
+        function validatePass(){
+            //Value-
+            let pass = document.getElementById('password').value;
+
+            //RegExpression-
+            let regPass = /^[A-Z][a-zA-Z0-9!@#$%^&*]{5,30}$/;
+
+            //check if the RegExpressions
+            if(regPass.test(pass)){
+                document.getElementById("message2").innerHTML = "Valid Password"
+            }else{
+                document.getElementById("message2").innerHTML = "invalid Format: Password must be at least 8-30 characters."
+            }
+        }
+
+        //clear Field
+        function clearField(){
+            document.getElementById('user').value = '';
+            document.getElementById('password').value = '';
+        }
+    </script>
+</body>
+</html>
