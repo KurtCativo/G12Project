@@ -1,0 +1,8 @@
+<h1>List of Student</h1>
+<ol>
+    <li>Benmark Jabulin</li>
+    <li>Arjay Valencia</li>
+    <li>Ravel Badillo</li>
+    <li>RJ Sanares</li>
+    <li>Kevin Samaniego</li>
+</ol>
