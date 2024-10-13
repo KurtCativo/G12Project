@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function Demo</title>
+</head>
+<body>
+    <h1> Arrow Function</h1>
+    <button id="btnGreetings" onclick="displayGreetings()">Greetings</button>
+    <button id="btnGetName">Name</button>
+    <button id="btnArrow">Arrow Function Ex.</button>
+    <button id="btnArrow2">Arrow Function Ex2.</button>
+
+    <script>
+        function displayGreetings(){
+            alert("I am a regular Function");
+        }
+
+        function getName(){
+            name = prompt("Enter your name");
+            alert("Hello " + name);
+        }
+
+        let showGreetings=()=>
+            alert("Hello Im Arrow Function");
+
+        
+        document.getElementById("btnGetName").addEventListener('click', getName);
+        document.getElementById("btnArrow").addEventListener('click', showGreetings);
+        document.getElementById("btnArrow2").addEventListener('click', ()=>{
+            n = prompt("Enter your Name.");
+            alert("Hello " + n);
+        });
+    </script>
+</body>
+</html>
