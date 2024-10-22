@@ -1,0 +1,62 @@
+[
+    {
+      "name": "APPLE",
+      "description": "An apple is a round, healthy fruit that is crisp and can taste sweet or tart.",
+      "price": "200 per kilo",
+      "image": "apple.jpg"
+    },
+    {
+      "name": "STRAWBERRY",
+      "description": "A strawberry is a small, red fruit with a sweet flavor and tiny seeds on its surface.",
+      "price": "200 per kilo",
+      "image": "strawberry.jpg"
+    },
+    {
+      "name": "MANGO",
+      "description": "A mango is a sweet, juicy tropical fruit with yellow or orange flesh and smooth skin.",
+      "price": "120 per kilo",
+      "image": "mango.jpg"
+    },
+    {
+      "name": "GRAPE",
+      "description": "Grapes are small, juicy fruits that grow in clusters on vines and can be eaten fresh.",
+      "price": "210 per kilo",
+      "image": "grape.jpg"
+    },
+    {
+      "name": "AVOCADO",
+      "description": "Avocados are creamy, nutrient-rich fruits with a smooth green skin and large seed.",
+      "price": "300 per kilo",
+      "image": "avocado.jpg"
+    },
+    {
+      "name": "GUAVA",
+      "description": "Guava is a tropical fruit with a sweet, slightly tangy flavor, typically round or oval in shape.",
+      "price": "80 per kilo",
+      "image": "guava.jpg"
+    },
+    {
+      "name": "PAPAYA",
+      "description": "Papaya is a tropical fruit with sweet orange flesh, black seeds in the center, and greenish-yellow.",
+      "price": "40 per kilo",
+      "image": "papaya.jpg"
+    },
+    {
+      "name": "WATERMELON",
+      "description": "Watermelon is a large, juicy fruit with a green rind and sweet, red or pink flesh filled.",
+      "price": "150 per kilo",
+      "image": "watermelon.jpg"
+    },
+    {
+      "name": "PERSIMMON",
+      "description": "Persimmon is a sweet, honey-flavored fruit with smooth orange skin and soft, jelly-like flesh.",
+      "price": "200 per kilo",
+      "image": "persimon.jpg"
+    },
+    {
+      "name": "DATES",
+      "description": "Dates are sweet, chewy fruits with a wrinkled brown skin and a single pit inside.",
+      "price": "130 per kilo",
+      "image": "dates.jpg"
+    }
+  ]
