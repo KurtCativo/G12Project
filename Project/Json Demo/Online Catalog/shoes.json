@@ -1,0 +1,62 @@
+[
+    {
+      "name": "Nike Air Max 270",
+      "description": "A trendy, lightweight running shoe with a large Air Max unit in the heel for comfort and bounce. The upper is made of breathable mesh, making it ideal for everyday wear.",
+      "price": 150,
+      "image": "Nike Air Max 270.jpg"
+    },
+    {
+      "name": "Adidas Ultraboost 22",
+      "description": "Known for its incredible cushioning and energy return, the Ultraboost 22 is a versatile running shoe that offers a snug, sock-like fit with a Primeknit upper.",
+      "price": 190,
+      "image": "Adidas Ultraboost 22.jpg"
+    },
+    {
+      "name": "Converse Chuck Taylor All-Star High Top",
+      "description": "A classic casual sneaker with a canvas upper and rubber sole, featuring the iconic star logo. It’s timeless and works well with casual outfits.",
+      "price": 60,
+      "image": "Converse Chuck Taylor All-Star High Top.jpg"
+    },
+    {
+      "name": "Vans Old Skool",
+      "description": "A low-top skate shoe with the signature side stripe, durable suede and canvas upper, and a waffle rubber outsole for traction. A great everyday shoe.",
+      "price": 65,
+      "image": "Vans Old Skool.jpg"
+    },
+    {
+      "name": "Puma RS-X",
+      "description": "A chunky, retro-inspired sneaker with a mix of leather, suede, and mesh. It provides a bold look and great comfort for streetwear enthusiasts.",
+      "price": 110,
+      "image": "Puma RS-X.jpg"
+    },
+    {
+      "name": "New Balance 990v5",
+      "description": "A premium running and walking shoe that’s famous for its balance of cushioning and stability. Made with quality suede and mesh materials.",
+      "price": 185,
+      "image": "New Balance 990v5.jpg"
+    },
+    {
+      "name": "Reebok Classic Leather",
+      "description": "A throwback sneaker made of soft leather for comfort and durability. Its clean, minimalist look works well for both casual and semi-casual wear.",
+      "price": 75,
+      "image": "Reebok Classic Leather.jpg"
+    },
+    {
+      "name": "Timberland 6-Inch Premium Waterproof Boots",
+      "description": "A rugged work boot made from waterproof leather with a padded collar for comfort. Designed for tough conditions while still being stylish.",
+      "price": 198,
+      "image": "Timberland 6-Inch Premium Waterproof Boots.jpg"
+    },
+    {
+      "name": "Crocs Classic Clog",
+      "description": "Lightweight foam clogs known for their comfort and ventilation. Easy to slip on, they are perfect for casual, outdoor, or water activities.",
+      "price": 50,
+      "image": "Crocs Classic Clog.jpg"
+    },
+    {
+      "name": "Birkenstock Arizona Sandals",
+      "description": "A comfortable two-strap sandal with contoured cork footbeds that mold to your feet. Known for durability and support, perfect for warm-weather casual wear.",
+      "price": 100,
+      "image": "Birkenstock Arizona Sandals.jpg"
+    }
+  ]

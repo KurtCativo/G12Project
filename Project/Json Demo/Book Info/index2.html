@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Json Table</title>
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      padding: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid black;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Programming Language</th>
+        <th>Edition</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody id="data-output">
+      
+    </tbody>
+  </table>
+  <script>
+    fetch('books.json')
+    .then(res => {
+      if (!res.ok) {
+        console.log('Problem');
+        return;
+      }
+      return res.json();
+    })
+    .then((data) => { // Access the entire data object
+      let placeholder = document.querySelector("#data-output");
+      let output = "";
+  // Loop through the 'book' array
+      for (let book of data.book) { // Change 'books' to 'data.book'
+        output += `
+          <tr>
+            <td>${book.id}</td>
+            <td>${book.language}</td>
+            <td>${book.edition}</td>
+            <td>${book.author}</td>
+          </tr>
+          `;
+      }
+      placeholder.innerHTML = output; // Ensure this is outside the loop
+    }) // End of then
+    .catch(error => {
+      console.log(error);
+    });
+  </script>
+</body>
