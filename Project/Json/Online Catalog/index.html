@@ -5,26 +5,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>JCD Online Tienda de Frutas</h1>
+    <h1>JCD Online Footwear</h1>
     <hr>
     <div class="container"></div>
     <footer>
-      <i>Design by: Kurt Erlman P. Cativo , 12 - Cooper</i>
+      <hr>
+      <i><b>Design by: Kurt Erlman P. Cativo , 12 - Cooper</b></i>
     </footer>
   <script>
     const container = document.querySelector(".container");
 
-    fetch("fruit.json")
+    fetch("shoes.json")
     .then(response => response.json())
-    .then(fruits => {
-        fruits.forEach(fruit => {
+    .then(shoes => {
+        shoes.forEach(shoe => {
             const card = document.createElement("div");
             card.classList.add("card");
 
             card.innerHTML = `
-                <img src="${fruit.image}" alt="${fruit.name}"> <h2>${fruit.name}</h2>
-                <p>${fruit.description}</p>
-                <p class="price">₱${fruit.price}</p>
+                <img src="${shoe.image}" alt="${shoe.name}"> <h2>${shoe.name}</h2>
+                <p>${shoe.description}</p>
+                <p class="price">$${shoe.price}</p>
             `;
 
             container.appendChild(card);
@@ -32,6 +33,5 @@
     })
     .catch(error => console.error("Error:", error));
   </script>
-
 </body>
 </html>

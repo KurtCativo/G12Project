@@ -2,6 +2,8 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(90deg, rgba(104, 104, 104, 0.708),rgba(255, 255, 255, 0.708), rgba(114, 114, 114, 0.708));
+
 }
 h1{
     display: flex;
@@ -31,8 +33,9 @@ i{
 }
 
 .card img {
-    width: 40%;
+    width: 50%;
     height: 30%;
+    padding: 15px;
     object-fit:cover;
     border-radius: 10px;
 }
@@ -40,7 +43,7 @@ i{
 .card h2 {
     margin-top: 10px;
     font-size: 1em;
-    background-color: #000;
+    background-color: #00000076;
     color: #fff;
     padding: 1px;
     
