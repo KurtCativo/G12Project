@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>JCD Online Tienda de Frutas</h1>
+    <h2>
+        ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    </h2>
+    <div class="container"></div>
+
+  <script>
+    const container = document.querySelector(".container");
+
+    fetch("fruit.json")
+    .then(response => response.json())
+    .then(fruits => {
+        fruits.forEach(fruit => {
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            card.innerHTML = `
+                <img src="${fruit.image}" alt="${fruit.name}"> <h2>${fruit.name}</h2>
+                <p>${fruit.description}</p>
+                <p class="price">₱${fruit.price}</p>
+            `;
+
+            container.appendChild(card);
+        });
+    })
+    .catch(error => console.error("Error:", error));
+  </script>
+</body>
+</html>
