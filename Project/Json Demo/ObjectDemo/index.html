@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object Demo</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            padding: 10px;
+        }
+        .card{
+            justify-items: center;
+        }
+        span{
+            background-color: #0a185f;
+            color: #ffffff;
+            padding-left: 5%;
+            padding-right: 10%;
+            border-style:hidden;
+            
+        }
+        #table-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: left;
+            padding: 15px;
+            
+        }
+        .container{
+            background-color: #ffffff;
+            border: 2px solid #0a185f;
+            box-shadow: 20px 20px 0px rgb(255, 157, 0);
+            padding: 10px;
+            text-align: center;
+            height: 100%;
+            width: 50%;
+            
+        }
+        table{
+            border-collapse: collapse;
+        }
+        th{
+            padding: 15px;
+            background-color: #ffff;
+            color: #e17f00;
+        }
+        td{
+            padding: 15px;
+            background-color: #ffff;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div id="table-container"></div>
+    </div>
+    <script>
+        const students = [  
+            { role: "Leader: ", name: "Jayriel Ramos", age: "?", lrn: "?", address: "Imus", bday: "?"},
+            { role: "Assistant Leader: ", name: "Alexis Lancian", age: "?", lrn: "?", address: "Imus", bday: "?"},
+            { role: "Members: ", name: "", age: "", lrn: "", address: "", bday: ""},
+            { role: "■", name: "Cruz", age: "?", lrn: "?", address: "Imus", bday: "?"},
+            { role: "■", name: "Sanares", age: "18", lrn: "?", address: "Binakayan", bday: "?"},
+            { role: "■", name: "Morales", age: "?", lrn: "?", address: "Imus", bday: "?"},
+            { role: "■", name: "Earl", age: "?", lrn: "?", address: "Bacoor", bday: "?"},
+            { role: "■", name: "Valencia", age: "17", lrn: "?", address: "Imus", bday: "?"},
+            { role: "■", name: "Cativo", age: "17", lrn: "108018120088", address: "Binakayan", bday: "12/7/06"},
+            { role: "■", name: "Mama", age: "?", lrn: "?", address: "Imus", bday: "?"},
+        ]
+        function createTable(students) {
+        // table and the header row
+        let tableHTML = `<table>
+                            <span><h1>Wednesday Groups</h1></span>
+                            
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>LRN</th>
+                            <th>Address</th>
+                            <th>Birthday</th>
+                        </tr>`;
+
+      //insert student data to the table using template literals
+       students.forEach(student => {
+               tableHTML += `
+                            <tr>
+                                <th>${student.role}</th>
+                                <td>${student.name}</td>
+                                <td>${student.age}</td>
+                                <td>${student.lrn}</td>
+                                <td>${student.address}</td>
+                                <td>${student.bday}</td>
+                            </tr>`;
+        });
+
+       // Close the table tag
+            tableHTML += `</table>`;
+            
+            return tableHTML;
+   }//end of the function
+
+    // Append table to the container
+    const tableContainer = document.getElementById('table-container');
+    tableContainer.classList.add("container");
+    tableContainer.innerHTML = createTable(students);
+    </script>
+</body>
+</html>
