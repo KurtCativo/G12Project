@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag Drop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Drag and Drop API</h1>
+    </header>
+    <div class="draggableContainer">
+        <div class="box" draggable="true" id="box1">5 + 5 = ?</div>
+        <div class="box" draggable="true" id="box2">2 x 8 = ?</div>
+        <div class="box" draggable="true" id="box3">30 / 2 = ?</div>
+        <div class="box" draggable="true" id="box4">10 - 3 = ?</div>
+    </div>
+    <div class="droppableContainer">
+        <div class="droppable" data-draggable-id="box2">16</div>
+        <div class="droppable" data-draggable-id="box4">7</div>
+        <div class="droppable" data-draggable-id="box1">10</div>
+        <div class="droppable" data-draggable-id="box3">15</div>
+        <div class="board">Remarks:<p id="remarks"></p>
+        Score:<p id="scores"></p>
+        </div>
+    </div>
+</body>
+</html>
