@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blank - Math Equations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .equation{
+            font-size: 24px;
+            margin: 20px 20%;
+            display: flex;
+            justify-content: center;
+            
+            border: 3px solid #000000;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .space{
+            padding: 20px;
+        }
+        .blank {
+            display: inline-block;
+            width: 40px;
+            height: 30px;
+            border: 3px dashed #000000;
+            margin: 0 10px;
+            background-color:#e0e0e0;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 30px;
+        }
+        .number {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px;
+            cursor: grab;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            border: 3px dashed #000000;
+        }
+        .number:hover {
+            background-color: #243825;
+        }
+        .number:active {
+            cursor: grabbing;
+        }
+        .number-container {
+            margin: 20px 0;
+        }
+        #remarks {
+            font-size: 28px;
+            margin-top: 20px;
+        }
+        p{
+            font-size: 28px;
+        }
+        .board{
+            padding: 10px;
+            margin-top: 50px;
+            margin-right: 40%;
+            background-color:#e0e0e0;
+            margin-left: 40%;
+            border: 3px solid #000000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Fill in the Blank - Math Equations</h1>
+<p>Drag the correct numbers to fill in the blanks. Your score will update automatically.</p>
+
+<!-- Math Equations -->
+<div class="equation">
+    <span>3 +</span>
+    <div class="blank" id="blank1">?</div>
+    <span>= 7</span>
+<div class="space"></div>
+    <span>5 x</span>
+    <div class="blank" id="blank2">?</div>
+    <span>= 25</span>
+<div class="space"></div>
+    <span>10 -</span>
+    <div class="blank" id="blank3" >?</div>
+    <span>= 6</span>
+<div class="space"></div>
+    <span>100 /</span>
+    <div class="blank" id="blank4" >?</div>
+    <span>= 5</span>
+<div class="space"></div>
+    <span>15 -</span>
+    <div class="blank" id="blank5" >?</div>
+    <span>= 7</span>
+</div>
+<div class="equation">
+    <span>8 x</span>
+    <div class="blank" id="blank6">?</div>
+    <span>= 16</span>
+<div class="space"></div>
+    <span>12 /</span>
+    <div class="blank" id="blank7">?</div>
+    <span>= 4</span>
+<div class="space"></div>
+    <span>24 +</span>
+    <div class="blank" id="blank8" >?</div>
+    <span>= 32</span>
+<div class="space"></div>
+    <span>9 x</span>
+    <div class="blank" id="blank9" >?</div>
+    <span>= 81</span>
+<div class="space"></div>
+    <span>14 -</span>
+    <div class="blank" id="blank10" >?</div>
+    <span>= 8</span>
+</div>
+
+<!-- Draggable numbers -->
+<div class="number-container">
+    <div class="number" draggable="true" id="1">1</div>
+    <div class="number" draggable="true" id="2">2</div>
+    <div class="number" draggable="true" id="3">3</div>
+    <div class="number" draggable="true" id="4">4</div>
+    <div class="number" draggable="true" id="5">5</div>
+    <div class="number" draggable="true" id="6">6</div>
+    <div class="number" draggable="true" id="7">7</div>
+    <div class="number" draggable="true" id="8">8</div>
+    <div class="number" draggable="true" id="9">9</div>
+    <div class="number" draggable="true" id="10">10</div>
+</div>
+
+<!-- remarks and Score -->
+<div class="board">
+    <div id="remarks">Start solving!</div>
+    <p>Score: <span id="score">0</span>/10</p>
+</div>
+<p style="color: #212121;">Design by: Kurt Erlman Cativo</p>
+
+<script>
+    // Initialize score
+    const draggableElement = document.querySelectorAll('.number');
+    const droppableElement = document.querySelectorAll('.blank');
+    let score = 0;
+
+    // Handle dragging
+    draggableElement.forEach(element =>{
+        element.addEventListener('dragstart', (drgStart)=>{
+             drgStart.dataTransfer.setData("text", drgStart.target.id);
+        });
+    });
+
+    // Allow dropping
+    droppableElement.forEach(element=>{
+        element.addEventListener('dragover', (dragOverEvent) => {
+            dragOverEvent.preventDefault(); // Allow the drop
+        });
+
+        element.addEventListener('drop', (drpEvt)=>{
+            drpEvt.preventDefault();
+            const data = drpEvt.dataTransfer.getData("text");
+            const droppedElement = document.getElementById(data);
+
+            // Get the target blank's ID
+            const blankId = drpEvt.target.id;
+
+            // Define the correct answers
+            const correctAnswers = {
+                blank1: "4", // 3 + 4 = 7
+                blank2: "5", // 5 x 5 = 25
+                blank3: "4",  // 10 - 4 = 6
+                blank4: "5",  // 100 / 5 = 20
+                blank5: "8",  // 15 - 8 = 7
+                blank6: "2",  // 8 x 2 = 16   
+                blank7: "3",  // 12 / 3 = 4  
+                blank8: "8",  // 24 + 8 = 32  
+                blank9: "9",  // 9 x 9 = 81 
+                blank10: "6"  // 14 - 6 = 8 
+            };
+
+            // remarks element
+            const remarks = document.getElementById("remarks");
+
+            // Check if the dragged number is correct
+            if (droppedElement.innerText === correctAnswers[blankId]) {
+                drpEvt.target.innerText = droppedElement.innerText; // Fill the blank
+
+                remarks.innerText = "Correct!";
+                remarks.style.color = "green";
+
+                // Update the score
+                score++;
+                document.getElementById("score").innerText = score;
+
+                // Check if all blanks are filled
+                if (score === 4) {
+                    remarks.innerText = "Congratulations! You completed the game!";
+                }
+            } else {
+                remarks.innerText = "Incorrect! Try again.";
+                remarks.style.color = "red";
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
