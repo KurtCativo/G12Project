@@ -16,12 +16,12 @@ body {
     background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(bg.jpg);
     background-position: center;
     background-size: cover;
-    height: 150vh;
+    height: 200vh;
 }
 
 .navbar{
     background: rgba(0, 225, 255,0.245);
-    width: 1781px;
+    width: 1581px;
     height: 150px;
     padding-right: 245px;
 }
